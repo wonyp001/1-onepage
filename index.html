@@ -2,304 +2,470 @@
 <html lang="ko">
 <head>
   <meta charset="UTF-8">
-  <title>당신 근처의 당근</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="당근 — 우리 동네 중고거래부터 동네생활까지, 이웃과 가까운 모든 것을 발견하세요.">
+  <title>당근 — 우리 동네 발견 플랫폼</title>
   <link rel="shortcut icon" href="image/logo/favicon_original.svg">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-  <header>
-    <div class="inner">
-      <nav>
-        <a class="logo" href="index.html" aria-label="당근 홈">
-          <img src="image/logo/logo_M.svg" alt="logo">
-        </a>
-        <ul>
-          <li><a href="#intro">서비스 소개</a></li>
-          <li><a href="#guide">이용방법</a></li>
-          <li><a href="#features">기능 둘러보기</a></li>
-          <li><a href="#neighbor">이웃 이야기</a></li>
-          <li><a href="#download">앱 다운로드</a></li>
+  <a class="skip-link" href="#main">본문 바로가기</a>
+
+  <header class="site-header" id="header">
+    <div class="container header-inner">
+      <a class="logo" href="index.html" aria-label="당근 홈">
+        <img src="image/logo/logo_M.svg" alt="당근">
+      </a>
+
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="메뉴 열기">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      <nav class="site-nav" id="site-nav" aria-label="주요 메뉴">
+        <ul class="nav-list">
+          <li><a href="#discover">동네 둘러보기</a></li>
+          <li><a href="#categories">카테고리</a></li>
+          <li><a href="#how">이용 방법</a></li>
+          <li><a href="#stories">이웃 이야기</a></li>
         </ul>
+        <a class="btn btn-primary btn-nav" href="#download">앱에서 시작하기</a>
       </nav>
     </div>
   </header>
-  <section>
-    <div class="inner">  
-      <div class="main">
-        <img src="image/main_1300.png" alt="main cover">
-      </div>
-      <div class="intro" id="intro">
-        <div class="intro-left">
-          <h1>필요한 정보가<br>우리 동네에,<br>딱 맞게</h1>
-          <span>위치 기반으로 동네의<br>정보와 이웃을 연결해드려요.</span>
-          <div class="intro-left-bottom">
-            <div class="down-user">
-              <div class="intro-icon"><i class="fa-solid fa-download"></i></div>
-              <div class="intro-text">
-                <strong>2,000만+</strong>
-                <span>월간 활성 사용자</span>
-              </div>
+
+  <main id="main">
+    <!-- §01 Hero -->
+    <section class="section section--tier-hero hero" id="discover" aria-labelledby="hero-title">
+      <div class="container hero-grid">
+        <div class="hero-content">
+          <p class="eyebrow">우리 동네 발견 플랫폼</p>
+          <h1 class="hero-title" id="hero-title">이웃과 가까운<br>모든 것을 발견하세요</h1>
+          <p class="hero-lead">중고거래, 동네 알바, 모임까지 — 당근은 위치 기반으로 우리 동네의 정보와 이웃을 연결하는 생활 플랫폼이에요.</p>
+
+          <form class="hero-search" role="search" aria-label="동네 검색" onsubmit="return false;">
+            <label class="sr-only" for="hero-search-input">동네에서 찾기</label>
+            <i class="fa-solid fa-magnifying-glass hero-search-icon" aria-hidden="true"></i>
+            <input
+              type="search"
+              id="hero-search-input"
+              class="hero-search-input"
+              placeholder="우리 동네에서 무엇을 찾고 계세요?"
+              autocomplete="off"
+            >
+            <button type="button" class="hero-search-btn" aria-label="검색">검색</button>
+          </form>
+
+          <div class="hero-chips" aria-label="인기 카테고리">
+            <span class="chips-label">인기</span>
+            <a class="chip" href="#categories" data-category="used">중고거래</a>
+            <a class="chip" href="#categories" data-category="life">동네생활</a>
+            <a class="chip" href="#categories" data-category="job">알바</a>
+            <a class="chip" href="#categories" data-category="group">모임</a>
+          </div>
+
+          <div class="hero-actions">
+            <a class="btn btn-primary btn-lg" href="#download">앱에서 시작하기</a>
+            <a class="btn btn-text" href="#categories">카테고리 둘러보기 <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
+          </div>
+        </div>
+
+        <div class="hero-visual" aria-hidden="true">
+          <div class="hero-map">
+            <div class="hero-map-bg"></div>
+            <div class="map-pins">
+              <span class="map-pin" style="--x: 18%; --y: 22%;"><img src="image/icon/icon_used.svg" alt=""><em>중고거래</em></span>
+              <span class="map-pin" style="--x: 62%; --y: 18%;"><img src="image/icon/icon_life.svg" alt=""><em>동네생활</em></span>
+              <span class="map-pin" style="--x: 42%; --y: 48%;"><img src="image/icon/icon_job.svg" alt=""><em>알바</em></span>
+              <span class="map-pin" style="--x: 78%; --y: 55%;"><img src="image/icon/icon_group.svg" alt=""><em>모임</em></span>
+              <span class="map-pin" style="--x: 28%; --y: 68%;"><img src="image/icon/icon_store.svg" alt=""><em>동네업체</em></span>
             </div>
-            <div class="active-community">
-              <div class="intro-icon"><i class="fa-solid fa-people-roof"></i></div>
-              <div class="intro-text">
-                <strong>36,000개+</strong>
-                <span>동네 커뮤니티</span>
-              </div>  
+            <div class="hero-phone">
+              <div class="phone-frame">
+                <div class="phone-screen">
+                  <img src="image/intro/app_my_carrot.jpg" alt="당근 앱 나의 당근 화면" width="1080" height="5851" decoding="async">
+                </div>
+                <img class="phone-body" src="image/intro/phone_nobg_white_crop.png" alt="">
+              </div>
             </div>
           </div>
         </div>
-        <div class="intro-right">
-          <div class="phone-screen">
-            <div class="phone-frame">
-              <div class="phone-view">
-                <img src="image/intro/app_my_carrot.jpg" alt="">
-              </div>
-              <img class="phone-body" src="image/intro/phone_nobg_white_crop.png" alt="">
-            </div>
-          </div>
-          <div class="map-icon">
-            <span><img src="image/icon/icon_apt.svg" alt=""></span>
-            <span><img src="image/icon/icon_cafe.svg" alt=""></span>
-            <span><img src="image/icon/icon_car.svg" alt=""></span>
-            <span><img src="image/icon/icon_group.svg" alt=""></span>
-            <span><img src="image/icon/icon_job.svg" alt=""></span>
-            <span><img src="image/icon/icon_life.svg" alt=""></span>
-            <span><img src="image/icon/icon_store.svg" alt=""></span>
-            <span><img src="image/icon/icon_used.svg" alt=""></span>
-          </div>
+      </div>
+    </section>
+
+    <!-- §02 Trust bar -->
+    <section class="trust-bar" aria-label="서비스 규모">
+      <div class="container trust-inner">
+        <div class="trust-item">
+          <strong>2,000만+</strong>
+          <span>월간 활성 사용자</span>
+        </div>
+        <div class="trust-divider" aria-hidden="true"></div>
+        <div class="trust-item">
+          <strong>36,000개+</strong>
+          <span>동네 커뮤니티</span>
+        </div>
+        <div class="trust-divider" aria-hidden="true"></div>
+        <div class="trust-item">
+          <strong>매일 수백만 건</strong>
+          <span>새로운 동네 발견</span>
         </div>
       </div>
-      <div class="guide" id="guide">
-        <h2>이웃과 거래하는 가장 쉬운 방법</h2>
-        <div class="guide-steps">
-          <div class="guide-step step-1">
-            <div class="step-text">
-              <strong>물건 발견</strong>
-              <span>우리 동네에서 원하는<br>물건을 찾아요</span>
+    </section>
+
+    <!-- §03 Category Discovery -->
+    <section class="section section--tier-primary categories" id="categories" aria-labelledby="categories-title">
+      <div class="container">
+        <header class="section-header section-header--primary">
+          <p class="section-eyebrow">카테고리</p>
+          <h2 class="section-title section-title--primary" id="categories-title">동네에서 찾을 수 있는 모든 것</h2>
+          <p class="section-desc">관심 있는 카테고리를 선택해 당근에서 할 수 있는 일을 알아보세요.</p>
+        </header>
+
+        <div class="category-primary">
+          <button class="category-card category-card--featured" type="button" data-category="used" aria-expanded="false" aria-controls="panel-used">
+            <div class="category-card-content">
+              <span class="category-badge">핵심 서비스</span>
+              <div class="category-card-icon"><img src="image/icon/icon_used.svg" alt=""></div>
+              <div class="category-card-body">
+                <h3>중고거래</h3>
+                <p class="category-stat">우리 동네에서 가까운 이웃과 직거래</p>
+                <p class="category-desc">필요한 물건을 찾고, 안전하게 거래해요.</p>
+              </div>
+              <span class="category-link">둘러보기 <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></span>
             </div>
-            <div class="step-image">
+            <div class="category-card-visual">
               <img src="image/guide/app_search_s.jpg" alt="">
             </div>
-          </div>
+          </button>
 
-          <div class="guide-step step-2">
+          <button class="category-card category-card--featured" type="button" data-category="life" aria-expanded="false" aria-controls="panel-life">
+            <div class="category-card-content">
+              <span class="category-badge">핵심 서비스</span>
+              <div class="category-card-icon"><img src="image/icon/icon_life.svg" alt=""></div>
+              <div class="category-card-body">
+                <h3>동네생활</h3>
+                <p class="category-stat">동네 소식과 이웃의 질문이 모이는 곳</p>
+                <p class="category-desc">분실물, 맛집 추천, 동네 이야기를 나눠요.</p>
+              </div>
+              <span class="category-link">둘러보기 <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></span>
+            </div>
+            <div class="category-card-visual">
+              <img src="image/neighbor/local_cafe_s.jpg" alt="">
+            </div>
+          </button>
+        </div>
+
+        <div class="category-divider">
+          <span>더 탐색하기</span>
+        </div>
+
+        <div class="category-secondary">
+          <button class="category-card category-card--secondary" type="button" data-category="job" aria-expanded="false" aria-controls="panel-job">
+            <div class="category-card-icon"><img src="image/icon/icon_job.svg" alt=""></div>
+            <h3>알바/과외</h3>
+            <p>동네 알바와 과외 정보를 쉽게 찾아요.</p>
+          </button>
+          <button class="category-card category-card--secondary" type="button" data-category="apt" aria-expanded="false" aria-controls="panel-apt">
+            <div class="category-card-icon"><img src="image/icon/icon_apt.svg" alt=""></div>
+            <h3>부동산</h3>
+            <p>우리 동네 집과 방 정보를 한눈에 확인해요.</p>
+          </button>
+          <button class="category-card category-card--secondary" type="button" data-category="car" aria-expanded="false" aria-controls="panel-car">
+            <div class="category-card-icon"><img src="image/icon/icon_car.svg" alt=""></div>
+            <h3>중고차</h3>
+            <p>믿을 수 있는 중고차를 동네에서 찾아보세요.</p>
+          </button>
+          <button class="category-card category-card--secondary" type="button" data-category="store" aria-expanded="false" aria-controls="panel-store">
+            <div class="category-card-icon"><img src="image/icon/icon_store.svg" alt=""></div>
+            <h3>동네업체</h3>
+            <p>가까운 가게와 업체 정보를 발견해요.</p>
+          </button>
+          <button class="category-card category-card--secondary" type="button" data-category="group" aria-expanded="false" aria-controls="panel-group">
+            <div class="category-card-icon"><img src="image/icon/icon_group.svg" alt=""></div>
+            <h3>모임</h3>
+            <p>취미와 관심사로 이웃과 함께해요.</p>
+          </button>
+          <button class="category-card category-card--secondary" type="button" data-category="cafe" aria-expanded="false" aria-controls="panel-cafe">
+            <div class="category-card-icon"><img src="image/icon/icon_cafe.svg" alt=""></div>
+            <h3>카페</h3>
+            <p>온라인 동네 카페에서 이야기를 나눠요.</p>
+          </button>
+        </div>
+
+        <div class="category-panels">
+          <div class="category-panel" id="panel-used" data-panel="used" hidden>
+            <div class="panel-content">
+              <ul class="panel-benefits">
+                <li><i class="fa-solid fa-check" aria-hidden="true"></i> 가까운 거리의 이웃과 빠른 거래</li>
+                <li><i class="fa-solid fa-check" aria-hidden="true"></i> 채팅으로 바로 확인하고 약속 잡기</li>
+                <li><i class="fa-solid fa-check" aria-hidden="true"></i> 거래 후 이웃 평가로 신뢰 쌓기</li>
+              </ul>
+              <div class="panel-screens">
+                <img src="image/guide/app_search_s.jpg" alt="중고거래 검색 화면">
+                <img src="image/guide/app_detail_s.jpg" alt="상품 상세 화면">
+              </div>
+              <a class="btn btn-primary btn-sm" href="#download">앱에서 중고거래 시작하기</a>
+            </div>
+          </div>
+          <div class="category-panel" id="panel-life" data-panel="life" hidden>
+            <div class="panel-content">
+              <ul class="panel-benefits">
+                <li><i class="fa-solid fa-check" aria-hidden="true"></i> 동네 소식과 질문을 실시간으로</li>
+                <li><i class="fa-solid fa-check" aria-hidden="true"></i> 분실물, 행사, 맛집 정보 공유</li>
+                <li><i class="fa-solid fa-check" aria-hidden="true"></i> 인증된 이웃과 안전한 소통</li>
+              </ul>
+              <div class="panel-screens">
+                <img src="image/neighbor/local_cafe_s.jpg" alt="동네생활 피드">
+              </div>
+              <a class="btn btn-primary btn-sm" href="#download">앱에서 동네생활 시작하기</a>
+            </div>
+          </div>
+          <div class="category-panel" id="panel-job" data-panel="job" hidden>
+            <div class="panel-content">
+              <ul class="panel-benefits">
+                <li><i class="fa-solid fa-check" aria-hidden="true"></i> 걸어서 갈 수 있는 동네 알바</li>
+                <li><i class="fa-solid fa-check" aria-hidden="true"></i> 과외·튜터링 매칭</li>
+              </ul>
+              <a class="btn btn-primary btn-sm" href="#download">앱에서 알바 찾기</a>
+            </div>
+          </div>
+          <div class="category-panel" id="panel-apt" data-panel="apt" hidden>
+            <div class="panel-content">
+              <ul class="panel-benefits">
+                <li><i class="fa-solid fa-check" aria-hidden="true"></i> 우리 동네 매물 한눈에</li>
+                <li><i class="fa-solid fa-check" aria-hidden="true"></i> 직거래·전월세 정보 탐색</li>
+              </ul>
+              <a class="btn btn-primary btn-sm" href="#download">앱에서 부동산 보기</a>
+            </div>
+          </div>
+          <div class="category-panel" id="panel-car" data-panel="car" hidden>
+            <div class="panel-content">
+              <ul class="panel-benefits">
+                <li><i class="fa-solid fa-check" aria-hidden="true"></i> 검증된 중고차 매물</li>
+                <li><i class="fa-solid fa-check" aria-hidden="true"></i> 가까운 판매자와 직접 상담</li>
+              </ul>
+              <a class="btn btn-primary btn-sm" href="#download">앱에서 중고차 보기</a>
+            </div>
+          </div>
+          <div class="category-panel" id="panel-store" data-panel="store" hidden>
+            <div class="panel-content">
+              <ul class="panel-benefits">
+                <li><i class="fa-solid fa-check" aria-hidden="true"></i> 동네 맛집·업체 발견</li>
+                <li><i class="fa-solid fa-check" aria-hidden="true"></i> 이웃 추천과 리뷰</li>
+              </ul>
+              <a class="btn btn-primary btn-sm" href="#download">앱에서 업체 찾기</a>
+            </div>
+          </div>
+          <div class="category-panel" id="panel-group" data-panel="group" hidden>
+            <div class="panel-content">
+              <ul class="panel-benefits">
+                <li><i class="fa-solid fa-check" aria-hidden="true"></i> 러닝, 독서 등 관심사 모임</li>
+                <li><i class="fa-solid fa-check" aria-hidden="true"></i> 가까운 이웃과 함께하는 취미</li>
+              </ul>
+              <div class="panel-screens">
+                <img src="image/neighbor/running_crew_s.jpg" alt="모임 사진">
+              </div>
+              <a class="btn btn-primary btn-sm" href="#download">앱에서 모임 찾기</a>
+            </div>
+          </div>
+          <div class="category-panel" id="panel-cafe" data-panel="cafe" hidden>
+            <div class="panel-content">
+              <ul class="panel-benefits">
+                <li><i class="fa-solid fa-check" aria-hidden="true"></i> 동네별 온라인 커뮤니티</li>
+                <li><i class="fa-solid fa-check" aria-hidden="true"></i> 관심 주제별 자유로운 대화</li>
+              </ul>
+              <a class="btn btn-primary btn-sm" href="#download">앱에서 카페 둘러보기</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- §04 Featured -->
+    <section class="section section--tier-mid featured" id="featured" aria-labelledby="featured-title">
+      <div class="container">
+        <header class="section-header">
+          <p class="section-eyebrow">발견 피드</p>
+          <h2 class="section-title section-title--mid" id="featured-title">지금 우리 동네에서 발견된 것들</h2>
+          <p class="section-desc">이웃들이 오늘 당근에서 찾은 물건과 정보예요.</p>
+        </header>
+
+        <div class="featured-track" role="list">
+          <article class="feed-card" role="listitem">
+            <div class="feed-thumb"><img src="image/neighbor/chair_1_s.jpg" alt="캠핑 의자"></div>
+            <span class="feed-tag">중고거래</span>
+            <h3 class="feed-title">캠핑 의자 · 거의 새것</h3>
+            <p class="feed-meta">역삼동 · 3분 전</p>
+          </article>
+          <article class="feed-card" role="listitem">
+            <div class="feed-thumb"><img src="image/neighbor/running_crew_s.jpg" alt="러닝 모임"></div>
+            <span class="feed-tag">모임</span>
+            <h3 class="feed-title">반포 한강 러닝 크루 모집</h3>
+            <p class="feed-meta">반포동 · 12분 전</p>
+          </article>
+          <article class="feed-card" role="listitem">
+            <div class="feed-thumb"><img src="image/neighbor/local_cafe_s.jpg" alt="동네 카페"></div>
+            <span class="feed-tag">동네업체</span>
+            <h3 class="feed-title">서초동 숨은 로스터리 카페</h3>
+            <p class="feed-meta">서초동 · 28분 전</p>
+          </article>
+          <article class="feed-card" role="listitem">
+            <div class="feed-thumb"><img src="image/guide/app_search_s.jpg" alt="알바 공고"></div>
+            <span class="feed-tag">알바</span>
+            <h3 class="feed-title">카페 홀서빙 주말 알바</h3>
+            <p class="feed-meta">강남동 · 1시간 전</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- §05 How it works -->
+    <section class="section section--tier-mid how" id="how" aria-labelledby="how-title">
+      <div class="container">
+        <header class="section-header section-header--center">
+          <p class="section-eyebrow">이용 방법</p>
+          <h2 class="section-title section-title--mid" id="how-title">발견부터 거래까지, 3단계면 충분해요</h2>
+          <p class="section-desc">복잡하지 않아요. 동네에서 원하는 것을 찾고 바로 시작하세요.</p>
+        </header>
+
+        <div class="how-steps">
+          <div class="how-step">
+            <span class="step-num">1</span>
             <div class="step-text">
-              <strong>채팅 시작</strong>
-              <span>궁금한 점을 채팅으로<br>빠르게 확인해요</span>
+              <h3>발견하기</h3>
+              <p>우리 동네에서 원하는 물건과 정보를 찾아요.</p>
             </div>
             <div class="step-image">
-              <img src="image/guide/app_detail_s.jpg" alt="">
+              <img src="image/guide/app_search_s.jpg" alt="검색 화면">
             </div>
           </div>
-
-          <div class="guide-step step-3">
+          <div class="how-step">
+            <span class="step-num">2</span>
             <div class="step-text">
-              <strong>약속 잡기</strong>
-              <span>시간과 장소를 정하고<br>만나요</span>
+              <h3>대화하기</h3>
+              <p>채팅으로 궁금한 점을 빠르게 확인해요.</p>
             </div>
             <div class="step-image">
-              <img src="image/guide/app_chatting_s.jpg" alt="">
+              <img src="image/guide/app_detail_s.jpg" alt="상세 및 채팅 화면">
             </div>
           </div>
-
-          <div class="guide-step step-4">
+          <div class="how-step">
+            <span class="step-num">3</span>
             <div class="step-text">
-              <strong>거래 완료</strong>
-              <span>안전하게 거래하고<br>서로 평가를 남겨요</span>
+              <h3>만나기</h3>
+              <p>가까운 곳에서 안전하게 거래하고 평가를 남겨요.</p>
             </div>
             <div class="step-image">
-              <img src="image/guide/app_chatting_s.jpg" alt="">
+              <img src="image/guide/app_chatting_s.jpg" alt="채팅 및 약속 화면">
             </div>
           </div>
         </div>
       </div>
-      <div class="features" id="features">
-        <h2>당근에서 할 수 있는 모든 것</h2>
-        <h3>다양한 기능으로 더 편리하고 풍요로운 동네 생활을 경험해보세요.</h3>
-        <div class="feature-flow">
-          <div class="feature-cards">
-            <div class="feature-card">
-              <img src="image/icon/icon_used.svg" alt="">
-              <strong>중고거래</strong>
-              <p>가까운 이웃과 안전하게 거래해요</p>
-              <span>더 알아보기</span>
-            </div>
-            <div class="feature-card">
-              <img src="image/icon/icon_job.svg" alt="">
-              <strong>알바/과외</strong>
-              <p>동네 알바, 과외 정보를 쉽게 찾아요</p>
-              <span>더 알아보기</span>
-            </div>
-            <div class="feature-card">
-              <img src="image/icon/icon_apt.svg" alt="">
-              <strong>부동산</strong>
-              <p>우리 동네 집정보를 한눈에 확인해요</p>
-              <span>더 알아보기</span>
-            </div>
-            <div class="feature-card">
-              <img src="image/icon/icon_car.svg" alt="">
-              <strong>중고차</strong>
-              <p>믿을수 있는 중고차를 찾아보세요</p>
-              <span>더 알아보기</span>
-            </div>
-            <div class="feature-card">
-              <img src="image/icon/icon_store.svg" alt="">
-              <strong>동네업체</strong>
-              <p>동네 가게와 업체 정보를 쉽게 찾아요</p>
-              <span>더 알아보기</span>
-            </div>
-            <div class="feature-card">
-              <img src="image/icon/icon_life.svg" alt="">
-              <strong>동네생활</strong>
-              <p>동네소식, 분실물 등 이웃과 나눠요</p>
-              <span>더 알아보기</span>
-            </div>
-            <div class="feature-card">
-              <img src="image/icon/icon_group.svg" alt="">
-              <strong>모임</strong>
-              <p>취미와 관심사로 이웃과 만나요</p>
-              <span>더 알아보기</span>
-            </div>
-            <div class="feature-card">
-              <img src="image/icon/icon_cafe.svg" alt="">
-              <strong>카페</strong>
-              <p>온라인 동네 카페에서 이야기를 나눠요 </p>
-              <span>더 알아보기</span>
-            </div>
+    </section>
 
-          <!-- 복제 -->
-            <div class="feature-card">
-              <img src="image/icon/icon_used.svg" alt="">
-              <strong>중고거래</strong>
-              <p>가까운 이웃과 안전하게 거래해요</p>
-              <span>더 알아보기</span>
-            </div>
-            <div class="feature-card">
-              <img src="image/icon/icon_job.svg" alt="">
-              <strong>알바/과외</strong>
-              <p>동네 알바, 과외 정보를 쉽게 찾아요</p>
-              <span>더 알아보기</span>
-            </div>
-            <div class="feature-card">
-              <img src="image/icon/icon_apt.svg" alt="">
-              <strong>부동산</strong>
-              <p>우리 동네 집과 방 정보를 한눈에 확인해요</p>
-              <span>더 알아보기</span>
-            </div>
-            <div class="feature-card">
-              <img src="image/icon/icon_car.svg" alt="">
-              <strong>중고차</strong>
-              <p>믿을수 있는 중고차를 찾아보세요</p>
-              <span>더 알아보기</span>
-            </div>
-            <div class="feature-card">
-              <img src="image/icon/icon_store.svg" alt="">
-              <strong>동네업체</strong>
-              <p>동네 가게와 업체 정보를 쉽게 찾아요</p>
-              <span>더 알아보기</span>
-            </div>
-            <div class="feature-card">
-              <img src="image/icon/icon_life.svg" alt="">
-              <strong>동네생활</strong>
-              <p>동네소식, 분실물 등 이웃과 나눠요</p>
-              <span>더 알아보기</span>
-            </div>
-            <div class="feature-card">
-              <img src="image/icon/icon_group.svg" alt="">
-              <strong>모임</strong>
-              <p>취미와 관심사로 이웃과 만나요</p>
-              <span>더 알아보기</span>
-            </div>
-            <div class="feature-card">
-              <img src="image/icon/icon_cafe.svg" alt="">
-              <strong>카페</strong>
-              <p>온라인 동네 카페에서 이야기를 나눠요 </p>
-              <span>더 알아보기</span>
-            </div>
+    <!-- §06 Stories -->
+    <section class="section section--tier-support stories" id="stories" aria-labelledby="stories-title">
+      <div class="container">
+        <header class="section-header section-header--center section-header--compact">
+          <p class="section-eyebrow">이웃 이야기</p>
+          <h2 class="section-title section-title--support" id="stories-title">이웃이 전하는 이야기</h2>
+          <p class="section-desc">평범한 동네에서 특별한 연결이 시작돼요.</p>
+        </header>
+
+        <div class="story-carousel">
+          <div class="story-track" id="story-track">
+            <article class="story-card is-active">
+              <img src="image/neighbor/chair_1_s.jpg" alt="중고 의자 거래">
+              <div class="story-body">
+                <span class="story-tag">중고거래</span>
+                <blockquote>"필요했던 의자를 이웃에게 저렴하게 샀어요!"</blockquote>
+                <cite>@역삼동 · 20대 직장인</cite>
+              </div>
+            </article>
+            <article class="story-card">
+              <img src="image/neighbor/running_crew_s.jpg" alt="러닝 모임">
+              <div class="story-body">
+                <span class="story-tag">모임</span>
+                <blockquote>"같이 러닝할 사람을 찾아서 매주 만나고 있어요."</blockquote>
+                <cite>@반포동 · 30대 자영업자</cite>
+              </div>
+            </article>
+            <article class="story-card">
+              <img src="image/neighbor/local_cafe_s.jpg" alt="동네 카페">
+              <div class="story-body">
+                <span class="story-tag">동네업체</span>
+                <blockquote>"동네 맛집을 발견하고 단골이 되었어요!"</blockquote>
+                <cite>@서초동 · 40대 주부</cite>
+              </div>
+            </article>
+          </div>
+          <div class="story-dots" id="story-dots" role="tablist" aria-label="이웃 이야기 슬라이드">
+            <button type="button" class="is-active" role="tab" aria-selected="true" aria-label="1번 이야기"></button>
+            <button type="button" role="tab" aria-selected="false" aria-label="2번 이야기"></button>
+            <button type="button" role="tab" aria-selected="false" aria-label="3번 이야기"></button>
           </div>
         </div>
       </div>
-      <div class="neighbor" id="neighbor">
-        <h2>당근에서 시작된 이웃 이야기</h2>
-        <h3>평범한 동네에서 특별한 연결이 시작돼요.</h3>
-        <div class="neighbor-inner">
-          <div class="story-cards">
-              <div class="story-card">
-                <img src="image/neighbor/chair_1_s.jpg" alt="">
-                <div class="card-text">
-                  <span>중고거래</span>
-                  <span>"필요했던 의자를 이웃에게 저렴하게 샀어요!"</span>
-                  <span>@역삼동 · 20대 직장인</span>
-                </div>
-              </div>
-              <div class="story-card">
-                <img src="image/neighbor/running_crew_s.jpg" alt="">
-                <div class="card-text">
-                  <span>모임</span>
-                  <span>"같이 러닝할 사람을 찾아서 매주 만나고 있어요"</span>
-                  <span>@반포동 · 30대 자영업자</span>
-                </div>
-              </div>
-              <div class="story-card">
-                <img src="image/neighbor/local_cafe_s.jpg" alt="">
-                <div class="card-text">
-                  <span>동네업체</span>
-                  <span>"동네 맛집을 발견하고 단골이 되었어요!"</span>
-                  <span>@서초동 · 40대 주부</span>
-                </div>
-              </div>
-          </div>
-          <div class="story-pagination">
-            <span class="active"></span>
-            <span></span>
-            <span></span>
-            <span></span>
+    </section>
+
+    <!-- §07 Download -->
+    <section class="section section--tier-cta download" id="download" aria-labelledby="download-title">
+      <div class="container download-grid">
+        <div class="download-content">
+          <h2 class="section-title section-title--mid" id="download-title">동네 발견을 앱에서<br>더 깊게 경험하세요</h2>
+          <p class="section-desc">지금 다운로드하고 우리 동네를 탐색해 보세요.</p>
+          <div class="store-badges">
+            <a href="https://apps.apple.com" target="_blank" rel="noopener noreferrer" aria-label="App Store에서 다운로드">
+              <img src="image/download/download_appstore.svg" alt="App Store">
+            </a>
+            <a href="https://play.google.com" target="_blank" rel="noopener noreferrer" aria-label="Google Play에서 다운로드">
+              <img src="image/download/download_playstore.svg" alt="Google Play">
+            </a>
           </div>
         </div>
-      </div>
-      <div class="download" id="download">
-        <div class="download-left">
-          <h1>당근은 앱에서<br> 더 편리하게 이용할 수 있어요</h1>
-          <span>지금 바로 다운로드하고 우리 동네를 경험해보세요!</span>
-          <img src="image/download/download_appstore.svg" alt="">
-          <img src="image/download/download_playstore.svg" alt="">
-        </div>
-        <div class="download-right">
-          <img src="image/download/app_down_white.png" alt="">
-          <img src="image/download/down_app_danggun_no_bg.svg" alt="">
+        <div class="download-visual">
+          <img src="image/download/app_down_white.png" alt="당근 앱 화면">
         </div>
       </div>
-    </div>
-  </section>
-  <footer>
-    <div class="inner">
-      <img src="image/logo/logo_S.svg" alt="">
-      <div class="footer_icon">
-        <img src="image/footer/footer_facebook.svg" alt="">
-        <img src="image/footer/footer_insta.svg" alt="">
-        <img src="image/footer/footer_youtube.svg" alt="">
+    </section>
+  </main>
+
+  <footer class="site-footer site-footer--minimal">
+    <div class="container footer-grid">
+      <div class="footer-brand">
+        <img src="image/logo/logo_S.svg" alt="당근">
+        <div class="footer-social">
+          <a href="#none" aria-label="Facebook"><img src="image/footer/footer_facebook.svg" alt=""></a>
+          <a href="#none" aria-label="Instagram"><img src="image/footer/footer_insta.svg" alt=""></a>
+          <a href="#none" aria-label="YouTube"><img src="image/footer/footer_youtube.svg" alt=""></a>
+        </div>
       </div>
-      <div class="text">
-        <b>대표</b> 김용현, 황도연 | <br>
-        <b>사업자번호</b> 375-87-00088 <br>
-        <b>직업정보제공사업 신고번호</b> J1200020200016
-        <b>주소</b> 서울특별시 서초구 강남대로 465, 교보강남타워 11층 <br>
-        <b>전화</b> 1544-9796 | 
-        <b>고객문의</b> cs@daangnservice.com <br>
-        <br>
+      <div class="footer-links">
+        <strong>서비스</strong>
         <ul>
+          <li><a href="#categories">카테고리</a></li>
+          <li><a href="#how">이용 방법</a></li>
+          <li><a href="#stories">이웃 이야기</a></li>
+        </ul>
+      </div>
+      <div class="footer-legal">
+        <p><b>대표</b> 김용현, 황도연</p>
+        <p><b>사업자번호</b> 375-87-00088</p>
+        <p><b>주소</b> 서울특별시 서초구 강남대로 465, 교보강남타워 11층</p>
+        <p><b>전화</b> 1544-9796 · <b>고객문의</b> cs@daangnservice.com</p>
+        <ul class="footer-policy">
           <li><a href="#none">이용약관</a></li>
           <li><a href="#none">개인정보처리방침</a></li>
           <li><a href="#none">위치기반서비스 이용약관</a></li>
-          <li><a href="#none">이용자보호 비전과 계획</a></li>
-          <li><a href="#none">청소년보호정책</a></li>
         </ul>
-        <br>
-        <p>&copy;당근마켓</p>
+        <p class="copyright">&copy; 당근마켓</p>
       </div>
     </div>
   </footer>
+
+  <script src="js/main.js"></script>
 </body>
 </html>
