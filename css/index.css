@@ -495,7 +495,7 @@ ul, ol { list-style: none; }
 }
 
 @media (min-width: 1024px) {
-  .hero { padding-block: 80px 100px; }
+  .hero { padding-block: 80px 120px; }
   .hero-inner {
     flex-direction: row;
     align-items: center;
@@ -989,7 +989,7 @@ ul, ol { list-style: none; }
 
 .download-title {
   font-size: clamp(2.125rem, 4.5vw, 3.75rem);
-  font-weight: 900;
+  font-weight: 800;
   line-height: 1.12;
   letter-spacing: -0.04em;
   color: #fff;
