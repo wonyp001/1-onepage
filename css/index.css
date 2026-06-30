@@ -214,7 +214,23 @@ ul, ol { list-style: none; }
   height: var(--header-h);
 }
 
-.logo img { width: 88px; height: auto; }
+@keyframes logo-drop {
+  0%   { transform: translateY(-90px) scale(1);                   opacity: 0; animation-timing-function: ease-in; }
+  8%   { opacity: 1; }
+  45%  { transform: translateY(10px)  scaleX(1.2)  scaleY(0.8);  animation-timing-function: ease-out; }
+  56%  { transform: translateY(-18px) scale(1);                   animation-timing-function: ease-in; }
+  66%  { transform: translateY(6px)   scaleX(1.1)  scaleY(0.92); animation-timing-function: ease-out; }
+  74%  { transform: translateY(-9px)  scale(1);                   animation-timing-function: ease-in; }
+  82%  { transform: translateY(3px)   scaleX(1.04) scaleY(0.97); animation-timing-function: ease-out; }
+  89%  { transform: translateY(-3px)  scale(1); }
+  100% { transform: translateY(0)     scale(1); }
+}
+
+.logo img {
+  width: 88px;
+  height: auto;
+  animation: logo-drop 0.9s both;
+}
 
 .nav-toggle {
   display: flex;
@@ -290,6 +306,7 @@ ul, ol { list-style: none; }
    §01 Hero
    ============================================================ */
 .hero {
+  position: relative;
   padding-block: 100px 80px;
   background:
     radial-gradient(ellipse 80% 60% at 5% -10%, rgba(255, 111, 15, 0.09) 0%, transparent 55%),
@@ -349,6 +366,24 @@ ul, ol { list-style: none; }
   flex-wrap: wrap;
   align-items: center;
   gap: 0;
+}
+
+@keyframes scroll-bounce {
+  0%, 100% { transform: translateY(0); }
+  50%       { transform: translateY(10px); }
+}
+
+.scroll-indicator {
+  position: absolute;
+  bottom: 28px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.scroll-indicator img {
+  width: 64px;
+  height: 64px;
+  animation: scroll-bounce 1.2s ease-in-out infinite;
 }
 
 .stat-item { padding: 0 24px; text-align: center; }
@@ -460,7 +495,7 @@ ul, ol { list-style: none; }
 }
 
 @media (min-width: 1024px) {
-  .hero { padding-block: 130px 110px; }
+  .hero { padding-block: 80px 100px; }
   .hero-inner {
     flex-direction: row;
     align-items: center;
@@ -506,28 +541,17 @@ ul, ol { list-style: none; }
   border: 1.5px solid var(--border);
   border-radius: var(--r-xl);
   overflow: hidden;
-  transition: border-color var(--duration) var(--ease),
+  transition: border-color 240ms var(--ease),
               transform var(--duration) var(--ease),
               box-shadow var(--duration) var(--ease);
 }
 
-.service-card::after {
-  content: '';
-  position: absolute;
-  top: 0; left: 0; right: 0;
-  height: 3px;
-  background: var(--card-color, var(--orange));
-  transform: scaleX(0);
-  transform-origin: left;
-  transition: transform 280ms var(--ease);
-}
-
 .service-card:hover {
-  border-color: var(--card-color, var(--orange));
-  transform: translateY(-5px);
-  box-shadow: var(--shadow-md);
+  border-color: var(--card-bg, var(--orange-light));
+  transform: translateY(-3px);
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.08),
+              inset 0 0 0 2px var(--card-bg, var(--orange-light));
 }
-.service-card:hover::after { transform: scaleX(1); }
 
 .service-icon {
   width: 56px; height: 56px;
@@ -928,7 +952,6 @@ ul, ol { list-style: none; }
 .download {
   background: linear-gradient(145deg, #FF8A3D 0%, #FF6F0F 45%, #E05500 100%);
   padding-block: 100px;
-  overflow: hidden;
 }
 
 .download-inner {
@@ -1005,10 +1028,30 @@ ul, ol { list-style: none; }
 }
 .store-badges img { height: 52px; width: auto; }
 
-.download-visual img {
-  max-width: 360px;
+.download-visual-inner {
+  position: relative;
+  display: inline-block;
+}
+
+.download-visual-inner > img:first-child {
+  max-width: 520px;
   width: 100%;
   filter: drop-shadow(0 24px 60px rgba(0, 0, 0, 0.18));
+  display: block;
+}
+
+@keyframes mascot-float {
+  0%, 100% { transform: rotate(8deg) translateY(0); }
+  50%       { transform: rotate(8deg) translateY(-16px); }
+}
+
+.download-mascot {
+  position: absolute;
+  bottom: -140px;
+  right: -210px;
+  width: 400px;
+  animation: mascot-float 3s ease-in-out infinite;
+  filter: drop-shadow(0 8px 24px rgba(0, 0, 0, 0.12)) !important;
 }
 
 /* ============================================================
