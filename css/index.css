@@ -307,7 +307,7 @@ ul, ol { list-style: none; }
    ============================================================ */
 .hero {
   position: relative;
-  padding-block: 100px 80px;
+  padding-block: 48px 80px;
   background:
     radial-gradient(ellipse 80% 60% at 5% -10%, rgba(255, 111, 15, 0.09) 0%, transparent 55%),
     radial-gradient(ellipse 50% 50% at 95% 100%, rgba(255, 111, 15, 0.06) 0%, transparent 55%),
@@ -410,106 +410,35 @@ ul, ol { list-style: none; }
   flex-shrink: 0;
 }
 
-/* Phone stack */
+/* Hero mockup */
 .hero-visual {
   width: 100%;
   display: flex;
   justify-content: center;
+  align-items: center;
 }
 
-.phone-stack {
-  position: relative;
-  width: 340px;
-  height: 460px;
-  flex-shrink: 0;
-}
-
-.phone-mock { position: absolute; }
-
-.phone-mock--front {
-  bottom: 0;
-  left: 50%;
-  transform: translateX(-50%);
-  z-index: 3;
-  width: 200px;
-}
-
-.phone-mock--back-1 {
-  bottom: 36px;
-  left: 4%;
-  transform: rotate(-11deg);
-  z-index: 2;
-  width: 172px;
-  opacity: 0.82;
-}
-
-.phone-mock--back-2 {
-  bottom: 52px;
-  right: 0;
-  transform: rotate(9deg);
-  z-index: 1;
-  width: 166px;
-  opacity: 0.65;
-}
-
-.phone-mock-frame {
-  position: relative;
+.hero-mockup {
   width: 100%;
-  line-height: 0;
-}
-.phone-mock--front .phone-mock-frame {
-  filter: drop-shadow(0 32px 64px rgba(0, 0, 0, 0.16));
-}
-.phone-mock--back-1 .phone-mock-frame {
-  filter: drop-shadow(0 20px 40px rgba(0, 0, 0, 0.10));
-}
-.phone-mock--back-2 .phone-mock-frame {
-  filter: drop-shadow(0 16px 32px rgba(0, 0, 0, 0.08));
-}
-
-.phone-mock-screen {
-  position: absolute;
-  top: 3.5%;
-  left: 6.15%;
-  width: 92.3%;
-  height: 94.7%;
-  overflow: hidden;
-  border-radius: 9.5%;
-  z-index: 1;
-  background: #ffffff;
-}
-.phone-mock-screen img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: top center;
+  height: auto;
   display: block;
-}
-
-.phone-mock-body {
-  position: relative;
-  width: 100%;
-  display: block;
-  z-index: 2;
-  pointer-events: none;
+  filter: drop-shadow(0 32px 80px rgba(0, 0, 0, 0.14));
 }
 
 @media (min-width: 1024px) {
-  .hero { padding-block: 80px 120px; }
+  .hero { padding-block: 60px 120px; }
   .hero-inner {
     flex-direction: row;
-    align-items: center;
-    gap: 80px;
+    align-items: flex-start;
+    gap: 48px;
   }
-  .hero-content { flex: 1; max-width: none; }
-  .hero-visual { flex: 1; }
-  .phone-stack {
-    width: 420px;
-    height: 560px;
+  .hero-content { flex: 0 0 440px; }
+  .hero-visual {
+    flex: 1;
+    margin-right: calc(-1 * clamp(20px, 5vw, 80px));
+    padding-top: 64px;
   }
-  .phone-mock--front  { width: 240px; }
-  .phone-mock--back-1 { width: 206px; }
-  .phone-mock--back-2 { width: 198px; }
+  .hero-mockup { width: 100%; max-width: none; }
 }
 
 /* ============================================================
@@ -628,41 +557,18 @@ ul, ol { list-style: none; }
   .how-step { padding-inline: 28px; }
 }
 
-/* Compact phone for How section */
-.step-screen { width: 100%; max-width: 180px; }
-
-.step-phone {
-  position: relative;
+/* Step images for How section */
+.step-screen {
   width: 100%;
-  line-height: 0;
-  filter: drop-shadow(0 20px 40px rgba(0, 0, 0, 0.11));
+  max-width: 220px;
+  flex-shrink: 0;
 }
 
-.step-phone-screen {
-  position: absolute;
-  top: 3.5%;
-  left: 6.15%;
-  width: 92.3%;
-  height: 94.7%;
-  overflow: hidden;
-  border-radius: 9.5%;
-  z-index: 1;
-  background: #ffffff;
-}
-.step-phone-screen img {
+.step-img {
   width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: top center;
+  height: auto;
   display: block;
-}
-
-.step-phone-body {
-  position: relative;
-  width: 100%;
-  display: block;
-  z-index: 2;
-  pointer-events: none;
+  filter: drop-shadow(0 20px 48px rgba(0, 0, 0, 0.13));
 }
 
 .step-info { max-width: 240px; }
