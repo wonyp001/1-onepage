@@ -174,7 +174,7 @@ ul, ol { list-style: none; }
 
 .section-title {
   font-size: var(--section-title);
-  font-weight: 900;
+  font-weight: 800;
   line-height: 1.2;
   letter-spacing: -0.03em;
   color: var(--text-1);
@@ -737,7 +737,6 @@ ul, ol { list-style: none; }
   overflow: hidden;
   background: var(--bg-gray);
 }
-.item-card--featured .item-thumb { aspect-ratio: 4 / 3; }
 
 .item-thumb img {
   width: 100%;
@@ -1142,6 +1141,38 @@ ul, ol { list-style: none; }
   font-weight: 500;
   margin-top: 8px;
 }
+
+/* ============================================================
+   Back to Top
+   ============================================================ */
+.back-to-top {
+  position: fixed;
+  bottom: 32px;
+  right: 32px;
+  z-index: 200;
+  width: 44px;
+  height: 44px;
+  border-radius: var(--r-full);
+  background: var(--orange);
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: var(--shadow-orange);
+  opacity: 0;
+  transform: translateY(12px);
+  pointer-events: none;
+  transition: opacity var(--duration) var(--ease),
+              transform var(--duration) var(--ease);
+}
+.back-to-top.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+.back-to-top:hover { background: var(--orange-hover); transform: translateY(-2px); }
 
 /* ============================================================
    Scroll-reveal

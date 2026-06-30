@@ -35,6 +35,17 @@
     });
   }
 
+  /* Back to top */
+  var backToTop = document.getElementById('backToTop');
+  if (backToTop) {
+    window.addEventListener('scroll', function () {
+      backToTop.classList.toggle('is-visible', window.scrollY > 400);
+    }, { passive: true });
+    backToTop.addEventListener('click', function () {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+  }
+
   /* Scroll-reveal: add .is-visible when element enters viewport */
   if ('IntersectionObserver' in window) {
     var revealEls = document.querySelectorAll(
