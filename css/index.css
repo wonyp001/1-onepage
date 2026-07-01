@@ -431,12 +431,13 @@ ul, ol { list-style: none; }
     flex-direction: row;
     align-items: flex-start;
     gap: 48px;
+    padding-left: 0;
   }
   .hero-content { flex: 0 0 440px; }
   .hero-visual {
     flex: 1;
     margin-right: calc(-1 * clamp(20px, 5vw, 80px));
-    padding-top: 64px;
+    align-self: center;
   }
   .hero-mockup { width: 100%; max-width: none; }
 }
